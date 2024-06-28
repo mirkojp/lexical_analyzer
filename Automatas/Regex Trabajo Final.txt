@@ -1,6 +1,0 @@
-Reales
-(-|e)NN*.NN*(e|(e|E)(+|-)NN*)
-Enteros
-(-|e)NN*
-Identificador
-(A|a|_)(A|a|_|N)*
