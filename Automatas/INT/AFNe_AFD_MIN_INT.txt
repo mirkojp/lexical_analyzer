@@ -1,0 +1,77 @@
+AFN-e->AFD <><><> Enteros
+{0}e-clausura={0,1,2,3,6,5}->A
+Mueve({A,N})={7}e-clausura={7,8,9,10,12}->B
+Mueve({A,-})={4}e-clasura={4,5,6}->C
+Mueve({A,O})= {} -> Muerto
+Mueve({B,A})={} -> Muerto
+Mueve({B,N})={11}e-clausura={11,9,10,12}->D
+Mueve({B,-})={} -> Muerto
+Mueve({B,O})={} -> Muerto
+Mueve({C,N})={7}e-clausura={7,8,9,10,12}->B
+Mueve({C,-})={}->Muerto
+Mueve({C,O})={} -> Muerto
+Mueve({D,N})={11}e-clausura={11,9,10,12}->D
+Mueve({D,-})={} -> Muerto
+Mueve({D,O})={} -> Muerto
+
+P0={A,C,M}
+P1={B,D}
+
+G0=
+   N - O
+A  1 0 0 
+C  1 0 0
+M  0 0 0
+
+G1=
+   N - O 
+B  1 0 0
+D  1 0 0
+
+P0={A,C}
+P1={M}
+P2={B,D}
+
+G0=
+   N - O
+A  2 0 1 
+C  2 1 1
+
+G1=
+   N - O 
+M  1 1 1
+
+G2=
+   N - O 
+B  2 1 1
+D  2 1 1
+
+P0={A}
+P1={C}
+P2={M}
+P3={B,D}
+
+
+G0=
+   N - O 
+A  3 1 2  
+
+G1=
+   N - O 
+C  3 2 2
+
+G2=
+   N - O 
+M  2 2 2
+
+G3=
+   N - O 
+B  3 2 2
+D  3 2 2
+
+TABLA TRANSICIONES
+   N - O 
+0| 3 1 2
+1| 3 2 2
+2| 2 2 2
+3| 3 2 2

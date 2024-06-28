@@ -1,0 +1,86 @@
+{0}e-clausura={0,1,2,3}->A
+Mueve({A,A})={4}e-clausura={4,7,8,9,16,10,11,12,18}->B
+Mueve({A,a})={5}e-clausura={5,7,8,9,16,10,11,12,18}->C
+Mueve({A,_})={6}e-clausura={6,7,8,9,16,10,11,12,18}->D
+Mueve({A,O})={}->muerto
+Mueve({A,N})={}->muerto
+Mueve({B,A})={13}e-clausura={13,17,9,16,10,11,12,18}->E
+Mueve({B,a})={14}e-clausura={14,17,9,16,10,11,12,18}->F
+Mueve({B,_})={15}e-clausura={15,17,9,16,10,11,12,18}->G
+Mueve({B,O})={}->muerto
+Mueve({B,N})={19}e-clausura={19,17,9,16,10,11,12,18}->H
+Mueve({C,A})={13}e-clausura={13,17,9,16,10,11,12,18}->E
+Mueve({C,a})={14}e-clausura={14,17,9,16,10,11,12,18}->F
+Mueve({C,_})={15}e-clausura={15,17,9,16,10,11,12,18}->G
+Mueve({C,O})={}->muerto
+Mueve({C,N})={19}e-clausura={19,17,9,16,10,11,12,18}->H
+Mueve({D,A})={13}e-clausura={13,17,9,16,10,11,12,18}->E
+Mueve({D,a})={14}e-clausura={14,17,9,16,10,11,12,18}->F
+Mueve({D,_})={15}e-clausura={15,17,9,16,10,11,12,18}->G
+Mueve({D,O})={}->muerto
+Mueve({D,N})={19}e-clausura={19,17,9,16,10,11,12,18}->H
+Mueve({E,A})={13}e-clausura={13,17,9,16,10,11,12,18}->E
+Mueve({E,a})={14}e-clausura={14,17,9,16,10,11,12,18}->F
+Mueve({E,_})={15}e-clausura={15,17,9,16,10,11,12,18}->G
+Mueve({E,O})={}->muerto
+Mueve({E,N})={19}e-clausura={19,17,9,16,10,11,12,18}->H
+Mueve({F,A})={13}e-clausura={13,17,9,16,10,11,12,18}->E
+Mueve({F,a})={14}e-clausura={14,17,9,16,10,11,12,18}->F
+Mueve({F,_})={15}e-clausura={15,17,9,16,10,11,12,18}->G
+Mueve({F,O})={}->muerto
+Mueve({F,N})={19}e-clausura={19,17,9,16,10,11,12,18}->H
+Mueve({G,A})={13}e-clausura={13,17,9,16,10,11,12,18}->E
+Mueve({G,a})={14}e-clausura={14,17,9,16,10,11,12,18}->F
+Mueve({G,_})={15}e-clausura={15,17,9,16,10,11,12,18}->G
+Mueve({G,O})={}->muerto
+Mueve({G,N})={19}e-clausura={19,17,9,16,10,11,12,18}->H
+Mueve({H,A})={13}e-clausura={13,17,9,16,10,11,12,18}->E
+Mueve({H,a})={14}e-clausura={14,17,9,16,10,11,12,18}->F
+Mueve({H,_})={15}e-clausura={15,17,9,16,10,11,12,18}->G
+Mueve({H,O})={}->muerto
+Mueve({H,N})={19}e-clausura={19,17,9,16,10,11,12,18}->H
+
+P0={A,M}
+P1={B,C,D,E,F,G,H}
+
+G0
+   A  a  _  N  O
+A  1  1  1  0  0
+M  0  0  0  0  0
+
+G1
+   A  a  _  N  O
+B  1  1  1  1  0
+C  1  1  1  1  0
+D  1  1  1  1  0
+E  1  1  1  1  0
+F  1  1  1  1  0
+G  1  1  1  1  0
+
+P0={A}
+P1={M}
+P2={B,C,D,E,F,G,H}
+
+G0
+   A  a  _  N  O
+A  2  2  2  1  1
+
+G1
+   A  a  _  N  O
+M  1  1  1  1  1
+
+G2
+   A  a  _  N  O
+B  2  2  2  2  1
+C  2  2  2  2  1
+D  2  2  2  2  1
+E  2  2  2  2  1
+F  2  2  2  2  1
+G  2  2  2  2  1
+H  2  2  2  2  1
+
+TABLA TRANSICIONES
+   A  a  _  N  O
+0| 2  2  2  1  1
+1| 1  1  1  1  1
+2| 2  2  2  2  1

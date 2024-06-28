@@ -1,0 +1,161 @@
+AFN-e->AFD <><><> Real /// N, -, ., E, e , O
+
+{0}e-clausura={0,1,2,4,5}->A
+
+Mueve{A,N}={6}e-clasura={6,7,10,9,11,12,21,22,13}->B
+Mueve{A,-}={3}e-clausura={3,5}->C
+Mueve{A,.}={} -> M
+Mueve{A,E}={} -> M
+Mueve{A,e}={} -> M
+Mueve{A,O}={} -> M
+
+Mueve{B,N}={8}e-clausura={8,7,10,9,11,12,21,22,13}->D
+Mueve{B,-}={} -> M
+Mueve{B,.}={14,36}e-clasura={14,36}->E
+Mueve{B,E}={24}e-clausura={24,25,26,27,29,30}->F
+Mueve{B,e}={23}e-clausura={23,25,26,27,29,30}->G
+Mueve{B,O}={} -> M
+
+Mueve{C,N}={6}e-clausura ={6,7,10,9,11,12,21,22,13}->B
+Mueve{C,-}={} -> M
+Mueve{C,.}={} -> M
+Mueve{C,E}={} -> M
+Mueve{C,e}={} -> M
+Mueve{C,O}={} -> M
+
+Mueve{D,N}={8}e-clausura={8,7,10,9,11,12,21,22,13}->D
+Mueve{D,-}={} ->  M
+Mueve{D,.}={14,36}e-clasura={14,36}->E
+Mueve{D,E}={24}e-clausura={24,25,26,27,29,30}->F
+Mueve{D,e}={23}e-clausura={23,25,26,27,29,30}->G
+Mueve{D,O}={} -> M
+
+Mueve{E,N}={37,15}e-clausura={37,15,38,41,40,42,43,44,16,19,18,20}->H
+Mueve{E,-}={}->M
+Mueve{E,.}={}->M
+Mueve{E,E}={}->M
+Mueve{E,e}={}->M
+Mueve{E,O}={}->M
+
+Mueve{F,N}={31}e-clausura={31,32,35,34,20}->I
+Mueve{F,-}={28}e-clausura={28,30}->J
+Mueve{F,.}={}->M
+Mueve{F,E}={}->M
+Mueve{F,e}={}->M
+Mueve{F,O}={}->M
+
+Mueve{G,N}={31}e-clausura={31,32,35,34,20}->I
+Mueve{G,-}={28}e-clausura={28,30}->J
+Mueve{G,.}={}->M
+Mueve{G,E}={}->M
+Mueve{G,e}={}->M
+Mueve{G,O}={}->M
+
+{37,15,38,41,40,42,43,44,16,19,18,20}
+Mueve{H,N}={39,17}e-clausura={17,16,19,,18,20,39,38,41,40,42,43,44}->K
+Mueve{H,-}={}->M
+Mueve{H,.}={}->M
+Mueve{H,E}={46}e-clausura={46,47,49,48,51,52}->L
+Mueve{H,e}={45}e-clausura={46,47,49,48,51,52}->N
+Mueve{H,O}={}->M
+
+{31,32,35,34,20}
+Mueve{I,N}={33}e-clausura={33,34,35,34,20}->Ñ
+Mueve{I,-}={}->M
+Mueve{I,.}={}->M
+Mueve{I,E}={}->M
+Mueve{I,e}={}->M
+Mueve{I,O}={}->M
+
+{28,30}
+Mueve{J,N}={31}e-clausura={31,32,35,34,20}->I
+Mueve{J,-}={}->M
+Mueve{J,.}={}->M
+Mueve{J,E}={}->M
+Mueve{J,e}={}->M
+Mueve{J,O}={}->M
+
+{17,16,19,,18,20,39,38,41,40,42,43,44}
+Mueve{K,N}={39,17}e-clausura={17,16,19,,18,20,39,38,41,40,42,43,44}->K
+Mueve{K,-}={}->M
+Mueve{K,.}={}->M
+Mueve{K,E}={46}e-clausura={46,47,48,49,51,52}->L
+Mueve{K,e}={45}e-clausura={45,47,48,49,51,52}->N
+Mueve{K,O}={}->M
+
+{46,47,49,48,51,52}
+Mueve{L,N}={53}e-clausura={53,54,55,57,20}->O
+Mueve{L,-}={50}e-clausura={50,52}->P
+Mueve{L,.}={}->M
+Mueve{L,E}={}->M
+Mueve{L,e}={}->M
+Mueve{L,O}={}->M
+
+Mueve{M,N}={}->M
+Mueve{M,-}={}->M
+Mueve{M,.}={}->M
+Mueve{M,E}={}->M
+Mueve{M,e}={}->M
+Mueve{M,O}={}->M
+
+
+{45,47,48,49,51,52}
+Mueve{N,N}={53}e-clausura={53,54,55,57,20}->O
+Mueve{N,-}={50}e-clausura={50,52}->P
+Mueve{N,.}={}->M
+Mueve{N,E}={}->M
+Mueve{N,e}={}->M
+Mueve{N,O}={}->M
+
+{33,34,35,34,20}
+Mueve{Ñ,N}={33}e-clausura={33,32,35,34,20}->Ñ
+Mueve{Ñ,-}={}->M
+Mueve{Ñ,.}={}->M
+Mueve{Ñ,E}={}->M
+Mueve{Ñ,e}={}->M
+Mueve{Ñ,O}={}->M
+
+{53,54,55,57,20}
+Mueve{O,N}={56}e-clausura={56,54,55,57,20}->Q
+Mueve{O,-}={}->M
+Mueve{O,.}={}->M
+Mueve{O,E}={}->M
+Mueve{O,e}={}->M
+Mueve{O,O}={}->M
+
+{50,52}
+Mueve{P,N}={53}e-clausura={53,54,55,57,20}->O
+Mueve{P,-}={}->M
+Mueve{P,.}={}->M
+Mueve{P,E}={}->M
+Mueve{P,e}={}->M
+Mueve{P,O}={}->M
+
+{56,54,55,57,20}
+Mueve{Q,N}={56}e-clausura={56,54,55,57,20}->Q
+Mueve{Q,-}={}->M
+Mueve{Q,.}={}->M
+Mueve{Q,E}={}->M
+Mueve{Q,e}={}->M
+Mueve{Q,O}={}->M
+
+
+  N - . E e O
+A B C M M M M
+B D M E F G M
+C B M M M M M
+D D M E F G M
+E H M M M M M
+F I J M M M M
+G I J M M M M
+H K M M L N M
+I Ñ M M M M M
+J I M M M M M
+K K M M L N M
+L O P M M M M
+M M M M M M M
+N O P M M M M
+Ñ Ñ M M M M M
+O Q M M M M M
+P O M M M M M
+Q Q M M M M M
