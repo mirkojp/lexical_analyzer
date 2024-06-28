@@ -8,7 +8,7 @@ making the .NN* mandatory
 (.NN*)|((e|E)(+|-)NN*)|(.NN*(e|E)(+|-)NN*)
 
 THIS IS THE FINAL REAL EXPRESION
-(-|eps)NN*((.NN*)|((e|E)(+|-)NN*)|(.NN*(e|E)(+|-)NN*))
+(-|eps)NN*((.NN*)|((e|E)(eps|-)NN*)|(.NN*(e|E)(eps|-)NN*))
 
 The number has to have either .NN*, Scientific Notation, or both
 Have to modify everything again
@@ -17,4 +17,4 @@ Enteros
 (-|e)NN*
 
 Identificador
-(A|a|_)(A|a|_)*
+(A|a|_)(A|a|_|N)*
