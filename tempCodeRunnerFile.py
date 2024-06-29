@@ -1,1 +1,1 @@
-
+analyzer.analyze()
