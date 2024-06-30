@@ -1,3 +1,5 @@
+import os
+#these ones could be saved into another file then, ikmported
 def is_alpha_lower(char):
     if not char:
         return False
@@ -29,11 +31,10 @@ def is_aldigit(char):
     else:
         return False
 
-
 def isspace(s):
     for char in s:
         # print(char)
-        if char not in (" ", "\n", "\r"): # each line end with \r\n, carriage return(moves cursor to end of line) + newline
+        if char not in (" ", "\n","\r"): # each line end with \r\n, carriage return(moves cursor to end of line) + newline
             return False
     return True
 
@@ -75,6 +76,7 @@ def is_identifier(token: str) -> bool:
     estado_actual = Q0
     i1 = 0
 
+    #could had made an 
     while i1 < len(token) and estado_actual != 1:
         estado_actual = DELTA[estado_actual][carasimbolo(token[i1])]
         i1 += 1
@@ -198,46 +200,99 @@ class LexicalAnalyzer:
     def read_token(self):
         """
         Reads the next token from the source code.
-        A token is defined as a sequence of alphanumeric characters and underscores.
+        A token is defined as a sequence of alphanumeric characters,dots and underscores.
         Non-alphanumeric characters are treated as separate tokens.
         """
         token = ""
+        string = 0
+
         while True:
             car = self.read_car()
             # print(car)
-            if car == self.FinArch or isspace(car):
+            # print(string)
+            # print(token)
+            # input()
+
+            #This evalutes if it is a string
+            if car in ['"',"'"] and string == 0: # Opening of string
+                if token: #Token exists example abc", returns abc as token preparas for start of string
+                    self.control -= 1
+                    return token
+                else:#Tokens doesn't exists, makes string 1 to indicate that we are working with string
+                    token += car
+                    string = 1
+
+            elif string == 1: #Working over a string
+                if car in ['"',"'"]: # End of string, adds car ("), and updates string indicator
+                    token += car
+                    string = 0
+                    return token
+                else: #Not end of string, adds car to token
+                    token += car
+
+            elif car == self.FinArch or isspace(car): #\0  or \r\n  " "
                 if token:
                     return token
                 if car == self.FinArch:
                     return None
+                
             elif not is_aldigit(car) and car not in {"_","."}:
-                if token:
-                    self.control -= 1  # Put back the non-alphanumeric character for next token rea)
+                if token: #token already being build, means car is the end of the token
+                    self.control -= 1  # Put back the non-alphanumeric character for next token read
                     return token
-                else:
+                else:  # token not being build, car is token
                     token = car
                     return token
             else:
                 token += car
 
+    # def analyze(self):
+    #     """
+    #     Analyzes the source code by reading and classifying tokens.
+    #     """
+    #     while True:
+    #         token = self.read_token()
+    #         if token is None:
+    #             input()
+    #             break
+    #         elif is_identifier(token):
+    #             print(f"{token} : Identifier")
+    #         elif is_integer(token):
+    #             print(f"{token} : Integer")
+    #         elif is_real(token):
+    #             print(f"{token} : Real")
+    #         else:
+    #             print(f"{token} : Invalid")
+    #     input()
+
+
     def analyze(self):
         """
         Analyzes the source code by reading and classifying tokens.
         """
-        while True:
-            token = self.read_token()
-            if token is None:
-                break
-            elif is_identifier(token):
-                print(f"{token} : Identifier")
-            elif is_integer(token):
-                print(f"{token} : Integer")
-            elif is_real(token):
-                print(f"{token} : Real")
-            else:
-                print(f"{token} : Invalid")
+        with open("analyze_output.txt", "w") as output_file:
+            while True:
+                token = self.read_token()
+                if token is None:
+                    break
+                elif is_identifier(token):
+                    output_file.write(f"{token} : Identifier\n")
+                elif is_integer(token):
+                    output_file.write(f"{token} : Integer\n")
+                elif is_real(token):
+                    output_file.write(f"{token} : Real\n")
+                else:
+                    output_file.write(f"{token} : Invalid\n")
 
 
 # Example usage:
-analyzer = LexicalAnalyzer("tokens.txt")
-analyzer.analyze()
+if __name__ == "__main__":
+    script_dir = os.path.dirname(__file__)
+    rel_path = "tokens.txt"
+    abs_file_path = os.path.join(script_dir, rel_path)
+
+    analyzer = LexicalAnalyzer(abs_file_path)
+    analyzer.analyze()
+
+    # analyzer = LexicalAnalyzer("tokens.txt")
+    # analyzer.analyze()

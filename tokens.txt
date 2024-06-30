@@ -3,4 +3,5 @@ for i in range(5):
         print(i)
 
 print(5.25)
-print("Do ne")
+print("Done")
+print(5.25)
