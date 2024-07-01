@@ -5,3 +5,5 @@ for i in range(5):
 print(5.25)
 print("Done")
 print(5.25)
+auto.color
++

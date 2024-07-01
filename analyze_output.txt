@@ -1,0 +1,33 @@
+for : Identifier
+i : Identifier
+in : Identifier
+range : Identifier
+( : Punctuation Operator
+5 : Integer
+) : Punctuation Operator
+: : Punctuation Operator
+if : Identifier
+i : Identifier
+== : Relational Operator
+5 : Integer
+: : Punctuation Operator
+print : Identifier
+( : Punctuation Operator
+i : Identifier
+) : Punctuation Operator
+print : Identifier
+( : Punctuation Operator
+5.25 : Real
+) : Punctuation Operator
+print : Identifier
+( : Punctuation Operator
+"Done" : Invalid
+) : Punctuation Operator
+print : Identifier
+( : Punctuation Operator
+5.25 : Real
+) : Punctuation Operator
+auto : Identifier
+. : Punctuation Operator
+color : Identifier
++ : Arithmetic Operator
