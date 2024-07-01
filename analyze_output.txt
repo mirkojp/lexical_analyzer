@@ -2,9 +2,9 @@ for : Identifier
 i : Identifier
 in : Identifier
 range : Identifier
-( : Punctuation Operator
+( : Delimiter Operator
 5 : Integer
-) : Punctuation Operator
+) : Delimiter Operator
 : : Punctuation Operator
 if : Identifier
 i : Identifier
@@ -12,21 +12,21 @@ i : Identifier
 5 : Integer
 : : Punctuation Operator
 print : Identifier
-( : Punctuation Operator
+( : Delimiter Operator
 i : Identifier
-) : Punctuation Operator
+) : Delimiter Operator
 print : Identifier
-( : Punctuation Operator
+( : Delimiter Operator
 5.25 : Real
-) : Punctuation Operator
+) : Delimiter Operator
 print : Identifier
-( : Punctuation Operator
-"Done" : Invalid
-) : Punctuation Operator
+( : Delimiter Operator
+"Done" : String
+) : Delimiter Operator
 print : Identifier
-( : Punctuation Operator
+( : Delimiter Operator
 5.25 : Real
-) : Punctuation Operator
+) : Delimiter Operator
 auto : Identifier
 . : Punctuation Operator
 color : Identifier

@@ -8,8 +8,8 @@ logical_operators = {"and","or","not"}
 arithmetic_operators = {"+","-","*","/","%","//","**"}
 assignation_operators = {"+=","=","-=","*=","/=","%=","//=","**="}
 relational_operators = {"<=",">","<",">=","==","!="}
-punctuation_operators = {",",".",":","(",")","[","]","{","}"}
-
+punctuation_operators = {",",".",":",";"}
+delimiters_operators = {"(",")","[","]","{","}"}
 
 def is_alpha_lower(char):
     if not char:
@@ -215,6 +215,20 @@ def is_punctuation_operator(token : str)-> bool:
     else:
         return False
 
+def is_string(token : str)-> bool:
+    if token[0] in {"'",'"'} and token[len(token)-1] in {"'",'"'}:
+        return True
+    else:
+        return False
+
+
+def is_delimiter_operator(token : str) -> bool:
+    if token in delimiters_operators:
+        return True
+    else:
+        return False
+
+
 class LexicalAnalyzer:
     FinArch = '\0'
 
@@ -259,7 +273,7 @@ class LexicalAnalyzer:
                     token += car
                     string = 1
 
-            #working on a string
+            # working on a string
             elif string == 1: 
                 if car in ['"',"'"]: # End of string, adds car ("), and updates string indicator
                     token += car
@@ -270,15 +284,14 @@ class LexicalAnalyzer:
                 else: #Not end of string, adds car to token
                     token += car
 
-            #end or file/ end of line
+            # end or file/ end of line
             elif car == self.FinArch or isspace(car): #\0  or \r\n  " "
                 if token:
                     return token
                 if car == self.FinArch:
                     return None
 
-
-            #Enters if neither an special caracters or digit/letter, used for singular car like (
+            # Enters if neither an special caracters or digit/letter, used for singular car like (
             elif not is_aldigit(car) and car not in special_chars:
                 if token: #token already being build, means car is the end of the token
                     self.control -= 1  # Put back the non-alphanumeric character for next token read
@@ -287,7 +300,7 @@ class LexicalAnalyzer:
                     token = car
                     return token
 
-            #Checks for . that are not part of a number
+            # Checks for . that are not part of a number
             elif car == ".":
                 car_aux = self.read_car()
                 if is_digit(car_aux):
@@ -349,6 +362,10 @@ class LexicalAnalyzer:
                     output_file.write(f"{token} : Relational Operator\n")
                 elif is_punctuation_operator(token):
                     output_file.write(f"{token} : Punctuation Operator\n")
+                elif is_string(token):
+                    output_file.write(f"{token} : String\n")
+                elif is_delimiter_operator(token):
+                    output_file.write(f"{token} : Delimiter Operator\n")
                 else:
                     output_file.write(f"{token} : Invalid\n")
 
