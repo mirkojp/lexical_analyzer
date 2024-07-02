@@ -7,6 +7,9 @@ print("Done")
 print(5.25)
 auto.color
 
+-abc.12
+
+
 number = 5E10
 number = 5E-10
 !=

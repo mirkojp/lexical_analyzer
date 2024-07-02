@@ -17,7 +17,9 @@ i : Identifier
 ) : Delimiter Operator
 print : Identifier
 ( : Delimiter Operator
-5.25 : Real
+5 : Integer
+. : Punctuation Operator
+25 : Integer
 ) : Delimiter Operator
 print : Identifier
 ( : Delimiter Operator
@@ -25,11 +27,16 @@ print : Identifier
 ) : Delimiter Operator
 print : Identifier
 ( : Delimiter Operator
-5.25 : Real
+5 : Integer
+. : Punctuation Operator
+25 : Integer
 ) : Delimiter Operator
 auto : Identifier
 . : Punctuation Operator
 color : Identifier
+-abc : Invalid
+. : Punctuation Operator
+12 : Integer
 number : Identifier
 = : Assignation Operator
 5E10 : Real
@@ -37,11 +44,4 @@ number : Identifier
 = : Assignation Operator
 5E-10 : Real
 != : Relational Operator
-abc : Identifier
-. : Punctuation Operator
-12.12.12 : Invalid
-. : Punctuation Operator
-23134eqw : Invalid
-. : Punctuation Operator
-qweqwewqewq : Identifier
-"Hello' how are u" : String
+"qwe qwe qwe" : String

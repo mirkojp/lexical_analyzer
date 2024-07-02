@@ -304,7 +304,7 @@ class LexicalAnalyzer:
             # elif car == ".":
             #     car_aux = self.read_car()
 
-            #     if is_digit(car_aux) and (is_digit(token[0]) or token[0] == "-"):
+            #     if is_digit(car_aux):
             #         self.control -= 1
             #         token += car
             #     elif token:
@@ -315,11 +315,11 @@ class LexicalAnalyzer:
             #         self.control -= 1
             #         return token
             # Checks for . that are not part of a number
-            
+
             elif car == ".":
                 car_aux = self.read_car()
                 if token:
-                    if is_digit(car_aux) and (is_digit(token[0]) or token[0] == "-"):
+                    if is_digit(car_aux) and token is int:
                         self.control -= 1
                         token += car
                     else :
