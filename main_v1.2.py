@@ -33,7 +33,7 @@ def is_digit(char):
     return False
 
 def is_aldigit(char):
-    if is_alpha_lower(char) or is_alpha_upper(char):
+    if is_alpha_lower(char):
         return True
     elif is_alpha_upper(char):
         return True
@@ -341,10 +341,11 @@ class LexicalAnalyzer:
         Analyzes the source code by reading and classifying tokens.
         """
         with open("analyze_output.txt", "w") as output_file:
-            while True:
+            end = 0
+            while end == 0:
                 token = self.read_token()
                 if token is None:
-                    break
+                    end = 1
                 elif is_identifier(token):
                     if is_logic_operator(token):
                         output_file.write(f"{token} : Logical Operator\n")
