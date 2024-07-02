@@ -37,4 +37,11 @@ number : Identifier
 = : Assignation Operator
 5E-10 : Real
 != : Relational Operator
+abc : Identifier
+. : Punctuation Operator
+12.12.12 : Invalid
+. : Punctuation Operator
+23134eqw : Invalid
+. : Punctuation Operator
+qweqwewqewq : Identifier
 "Hello' how are u" : String

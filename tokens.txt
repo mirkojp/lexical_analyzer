@@ -11,6 +11,4 @@ number = 5E10
 number = 5E-10
 !=
 
-
-
-"Hello' how are u"
+"qwe qwe qwe"

@@ -301,14 +301,30 @@ class LexicalAnalyzer:
                     return token
 
             # Checks for . that are not part of a number
+            # elif car == ".":
+            #     car_aux = self.read_car()
+
+            #     if is_digit(car_aux) and (is_digit(token[0]) or token[0] == "-"):
+            #         self.control -= 1
+            #         token += car
+            #     elif token:
+            #         self.control -= 2
+            #         return token
+            #     else:
+            #         token = car
+            #         self.control -= 1
+            #         return token
+            # Checks for . that are not part of a number
+            
             elif car == ".":
                 car_aux = self.read_car()
-                if is_digit(car_aux):
-                    self.control -= 1
-                    token += car
-                elif token:
-                    self.control -= 2
-                    return token
+                if token:
+                    if is_digit(car_aux) and (is_digit(token[0]) or token[0] == "-"):
+                        self.control -= 1
+                        token += car
+                    else :
+                        self.control -= 2
+                        return token
                 else:
                     token = car
                     self.control -= 1
@@ -380,5 +396,5 @@ if __name__ == "__main__":
     analyzer = LexicalAnalyzer(abs_file_path)
     analyzer.analyze()
 
-    # analyzer = LexicalAnalyzer("tokens.txt")
+    # analyzer = LexicalAnalyzer("tokens.txt")¿
     # analyzer.analyze()
