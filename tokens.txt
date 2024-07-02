@@ -6,4 +6,7 @@ print(5.25)
 print("Done")
 print(5.25)
 auto.color
+
+number = 5E10
+number = 5E-10
 +

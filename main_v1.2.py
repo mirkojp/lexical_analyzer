@@ -2,7 +2,7 @@ import os
 # these ones could be saved into another file then, ikmported
 
 # these are so monkey code
-special_chars = {"_", ".", "+", "/", "%","=", "!", "<", ">", "*"}
+special_chars = {"_", ".","-", "+", "/", "%","=", "!", "<", ">", "*"}
 
 logical_operators = {"and","or","not"}
 arithmetic_operators = {"+","-","*","/","%","//","**"}

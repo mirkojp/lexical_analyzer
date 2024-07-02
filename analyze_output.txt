@@ -30,4 +30,10 @@ print : Identifier
 auto : Identifier
 . : Punctuation Operator
 color : Identifier
+number : Identifier
+= : Assignation Operator
+5E10 : Real
+number : Identifier
+= : Assignation Operator
+5E-10 : Real
 + : Arithmetic Operator
