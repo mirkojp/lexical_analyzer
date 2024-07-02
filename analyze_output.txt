@@ -36,4 +36,5 @@ number : Identifier
 number : Identifier
 = : Assignation Operator
 5E-10 : Real
-+ : Arithmetic Operator
+!= : Relational Operator
+"Hello' how are u" : String

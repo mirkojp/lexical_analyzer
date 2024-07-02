@@ -9,4 +9,8 @@ auto.color
 
 number = 5E10
 number = 5E-10
-+
+!=
+
+
+
+"Hello' how are u"

@@ -186,47 +186,36 @@ def is_real(token : str)->bool:
 
 # this code was so nice then i had to put this
 def is_arithmetic_operator(token : str)->bool:
-    if token in arithmetic_operators:
-        return True
-    else:
-        return False
+    return token in arithmetic_operators
 
 def is_logic_operator(token : str)->bool:
-    if token in logical_operators:
-        return True
-    else:
-        return False
+    return token in logical_operators
+
 
 def is_assignation_operator(token : str)->bool:
-    if token in assignation_operators:
-        return True
-    else:
-        return False
+    return token in assignation_operators
 
 def is_relational_operator(token : str)->bool:
-    if token in relational_operators:
-        return True
-    else:
-        return False
+    return token in relational_operators
 
 def is_punctuation_operator(token : str)-> bool:
-    if token in punctuation_operators:
-        return True
-    else:
-        return False
+    return token in punctuation_operators
 
-def is_string(token : str)-> bool:
+
+def old_is_string(token : str)-> bool:
     if token[0] in {"'",'"'} and token[len(token)-1] in {"'",'"'}:
         return True
     else:
         return False
 
-
-def is_delimiter_operator(token : str) -> bool:
-    if token in delimiters_operators:
+def is_string(token : str) -> bool:
+    if token[0] == token[len(token)-1] and token[0] in {"'",'"'}:
         return True
     else:
-        return False
+        return False   
+
+def is_delimiter_operator(token : str) -> bool:
+    return token in delimiters_operators
 
 
 class LexicalAnalyzer:
@@ -259,29 +248,40 @@ class LexicalAnalyzer:
         Non-alphanumeric characters are treated as separate tokens.
         """
         token = ""
-        string = 0
+        string = False
 
         while True:
             car = self.read_car()
 
             # This evalutes if it is a string
-            if car in ['"',"'"] and string == 0: # Opening of string
+            if car in ['"',"'"] and not string: # Opening of string
                 if token: #Token exists example abc", returns abc as token preparas for start of string
                     self.control -= 1
                     return token
                 else:#Tokens doesn't exists, makes string 1 to indicate that we are working with string
                     token += car
-                    string = 1
+                    string = True
+
+            # # working on a string
+            # elif string:
+            #     if car in ['"',"'"]: # End of string, adds car ("), and updates string indicator
+            #         token += car
+            #         string = False
+            #         return token
+            #     if car == self.FinArch:#fucked it up with the number of "
+            #         return token
+            #     else: #Not end of string, adds car to token
+            #         token += car
 
             # working on a string
-            elif string == 1: 
-                if car in ['"',"'"]: # End of string, adds car ("), and updates string indicator
+            elif string:
+                if car == token[0]: # End of string, adds car ("), and updates string indicator
                     token += car
-                    string = 0
+                    string = False
                     return token
-                if car == self.FinArch:#fucked it up with the number of "
+                if car == self.FinArch:  # fucked it up with the number of "
                     return token
-                else: #Not end of string, adds car to token
+                else:  # Not end of string, adds car to token
                     token += car
 
             # end or file/ end of line
